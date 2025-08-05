@@ -15,7 +15,7 @@ function App() {
     if (!name) return alert('Enter your name!');
     const referralCode = referral || `${name.toLowerCase()}2025`;
     try {
-      const res = await axios.get(`http://localhost:5000/api/dashboard/${referralCode}`);
+      const res = await axios.get(`https://intern-portal-q7c6.onrender.com/api/dashboard/${referralCode}`);
       res.data.internName = name;
       setDashboard(res.data);
       setPage('dashboard');
@@ -26,7 +26,7 @@ function App() {
 
   const loadLeaderboard = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/leaderboard');
+      const res = await axios.get('https://intern-portal-q7c6.onrender.com/api/leaderboard');
       setLeaderboard(res.data);
       setPage('leaderboard');
     } catch (err) {
